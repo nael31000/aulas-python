@@ -1,13 +1,12 @@
-# Faça um programa que peça ao usuário para digitar números inteiros repetidamente.
+#Faça um programa que peça ao usuário para digitar números inteiros repetidamente.
 # O programa deve continuar pedindo números até que o usuário digite o número 0 (zero).
-# Quando o usuário digitar 0, o laço deve ser encerrado
-# e o programa deve exibir a soma de todos os números que foram digitados até aquele momento.
+# Quando o usuário digitar 0, o laço deve ser encerrado e o programa deve exibir a soma de todos os números que
+# foram digitados até aquele momento.
 
-soma_total=0
-numero = int(input("digite um numero inteiro: "))
+numero = int(input("Digite um numero inteiro: "))
+contagem = 0
+while numero!= 0:
+    contagem += numero
+    numero= int(input("Digite um numero novamente: "))
 
-while numero != 0:
-    soma_total+=numero
-    numero=int(input("digite um numero inteiro: "))
-
-print("final", soma_total)
+print("a soma de todos os números foi",contagem)
