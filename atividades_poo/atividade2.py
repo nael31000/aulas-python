@@ -1,12 +1,10 @@
 class Produto:
     def __init__(self, nome, preco, quantidade_estoque):
-        # Inicialização dos atributos privados com o prefixo __
         self.__nome = nome
         self.__preco = preco
         self.__quantidade_estoque = quantidade_estoque
 
     def adicionar_estoque(self, quantidade):
-        """Adiciona estoque apenas se a quantidade for maior que zero."""
         if quantidade > 0:
             self.__quantidade_estoque += quantidade
             print(f"Estoque atualizado. Novo total: {self.__quantidade_estoque} unidades.")
@@ -14,7 +12,6 @@ class Produto:
             print("Erro: Quantidade inválida")
 
     def realizar_venda(self, quantidade):
-        """Realiza a venda se houver estoque suficiente e a quantidade for válida."""
         if quantidade <= 0:
             print("Erro: Quantidade inválida")
         elif quantidade <= self.__quantidade_estoque:
@@ -24,7 +21,6 @@ class Produto:
             print("Venda negada: Estoque insuficiente")
 
     def aplicar_desconto(self, percentual):
-        """Aplica desconto respeitando o limite de 80% e o mínimo de 0%."""
         if 0 < percentual <= 80:
             self.__preco = self.__preco * (1 - percentual / 100)
             print(f"Desconto de {percentual}% aplicado. Novo preço: R$ {self.__preco:.2f}")
@@ -32,7 +28,7 @@ class Produto:
             print("Erro: Desconto inválido")
 
     def exibir_resumo(self):
-        """Exibe o estado atual dos dados encapsulados."""
+
         print("\n--- Resumo do Produto ---")
         print(f"Nome: {self.__nome}")
         print(f"Preço: R$ {self.__preco:.2f}")
